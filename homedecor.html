@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="it-rating" content="it-rat-d9a1edb698e71856637901657af681a4" />
+    <link rel="profile" href="https://gmpg.org/xfn/11"> -->
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <!-- This site is optimized with the Yoast SEO plugin v17.4 - https://yoast.com/wordpress/plugins/seo/ -->
+    <title>Home Decor</title>
+    <meta name="description" content="" />
+    <link href="./img/icons/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' id='wp-block-library-css' href='./css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='mr-map-css'
+        href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css?ver=1.0.0.1630313995' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='mr-styles-css' href='./css/style2.css' type='text/css' media='all' />
+    <script type='text/javascript' src='./js/jquery.min.js' id='jquery-core-js'></script>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener('aos:in:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to display element with custom event started');
+        });
+        document.addEventListener('aos:out:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to hide element with custom event started');
+        });
+    </script>
+
+</head>
+
+<body class="home page-template-default page page-id-41 wp-embed-responsive group-blog">
+
+    <header class="header-nav">
+    </header>
+
+    <main>
+
+        <div class="preload-wrapper">
+            <div class="preload" id="preload">
+                <svg class="preload__box" xmlns="http://www.w3.org/2000/svg" width="502" height="502"
+                    viewBox="0 0 502 502">
+                    <svg class="preload__rect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 502">
+                        <rect class="preload__rect-1" x="2.5" y="2.5" width="349px" height="349"></rect>
+                        <rect class="preload__rect-2" x="2.5" y="2.5" width="349px" height="349"></rect>
+                    </svg>
+                    <div class="preload__logo">
+                        <a href="#">
+                            <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" class="img">
+                        </a>
+                    </div>
+                    <span class="preload__precent">
+                        <span id="preloadPrecent"></span>%
+                    </span>
+                </svg>
+            </div>
+        </div>
+        <section class="mr-hero">
+            <div class="bg-video">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bg-video__content">
+                                <video id="desktop"  autoplay muted id="vid">
+                                    <source src="./img/video/page-video/Home page -1 st page home decor.mp4"
+                                        type="video/mp4">                               
+                                </video>
+                                <video id="mobile" autoplay muted id="vid">
+                                    <source src="./img/video/page-video/Home page -1 st page home decor- Mobile.mp4"
+                                        type="video/mp4">                               
+                                </video>
+                            </div> 
+                            <script>
+                                document.getElementById('vid').play();
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="mr-hero__wrapper">
+                    <div class="mr-hero__logo">
+                        <a href="#">
+                            <img src="./img/icons/home-decor-logo.svg" alt="" class="img">
+                        </a>
+                    </div>
+                    <h1 class="mr-hero__title">FASHIONTV<span class="element"> <br> HOME DÉCOR</span></h1>
+                    
+                    <p class="mr-hero__subtitle">
+                        Think Fashion , Think FashionTV
+                    </p>
+                </div>
+            </div>
+            <div class="mr-hero__arrow">
+                <img src="./img/icons/arrow.png" alt="Вниз">
+            </div>
+            <div class="mr-hero__sidebar">
+                <div class="mr-hero__btn-show-menu">
+                    <a data-izimodal-open="#menu__wrapper">
+                        <div href="#" class="mr-hero__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20px" height="14px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                    d="M0.000,14.000 L0.000,12.000 L20.000,12.000 L20.000,14.000 L0.000,14.000 ZM5.000,6.000 L20.000,6.000 L20.000,8.000 L5.000,8.000 L5.000,6.000 ZM0.000,-0.000 L20.000,-0.000 L20.000,2.000 L0.000,2.000 L0.000,-0.000 Z" />
+                            </svg>
+                        </div>
+                        <p>Menu</p>
+                    </a>
+                    <a href="./franchise.html#enquiry-now"> <p> Enquire Now</p></a>
+                </div>
+
+            </div>
+        </section>
+        <script>
+            (function () {
+                var preloadWrapper = document.querySelector(".preload-wrapper");
+                var preload = document.querySelector("#preload");
+                var preloadPrecent = preload.querySelector("#preloadPrecent");
+                var preloadRect = preload.querySelector(".preload__rect-2");
+
+                // Get All Images
+                var images = [];
+                var allImages = document.querySelectorAll("img");
+                var skipImages = "swiper-lazy";
+
+                for (var i = 0; i < allImages.length; i++) {
+                    if (allImages[i].classList.contains(skipImages)) continue;
+                    images.push(allImages[i].src);
+                }
+
+                var totalImages = images.length;
+                var loadedImages = 0;
+                var currentPrecent = 0;
+                var i = 0;
+                for (var i = 0; i < totalImages; i++) {
+                    var imageClone = new Image();
+                    imageClone.src = images[i];
+
+                    imageClone.onload = function () {
+                        loadedImages++;
+                        var first = loadedImages == 1 ? true : false;
+                        currentPrecent = getPrecent(totalImages, loadedImages);
+                        pushPrecent(currentPrecent, first);
+                        pushLine(currentPrecent);
+                        if (loadedImages == totalImages) finish();
+                    };
+
+                    imageClone.onerror = function () {
+                        totalImages--;
+                    };
+                }
+
+                // push precent
+                function pushPrecent(new_precent, isFirst) {
+                    if (isFirst) {
+                        // create first span
+                        var span1 = document.createElement("span");
+                        span1.dataset.oldPrecent = "";
+                        preloadPrecent.appendChild(span1);
+
+                        // create second span
+                        var span2 = document.createElement("span");
+                        span2.dataset.newPrecent = "";
+                        span2.innerHTML = new_precent;
+                        preloadPrecent.appendChild(span2);
+                    }
+
+                    var newPrecent = preloadPrecent.querySelector("[data-new-precent]");
+                    var oldPrecent = preloadPrecent.querySelector("[data-old-precent]");
+
+                    newPrecent.removeAttribute("data-new-precent");
+                    newPrecent.dataset.oldPrecent = '';
+
+                    oldPrecent.innerHTML = new_precent;
+                    oldPrecent.removeAttribute("data-old-precent");
+                    oldPrecent.dataset.newPrecent = '';
+                }
+
+                // push line
+                function pushLine(new_value) {
+                    var FULL = 280;
+                    var currentLine = FULL - (FULL * new_value / 100) + "%";
+
+                    preloadRect.style.getPropertyValue("--preload-dasharray");
+                    preloadRect.style.setProperty("--preload-dasharray", currentLine);
+                }
+
+                // get precent
+                function getPrecent(total, loaded) {
+                    return Math.round(loaded * 100 / total);
+                }
+
+                // finish
+                function finish() {
+                    setTimeout(function () {
+                        preloadWrapper.classList.add("preload-wrapper--finish");
+                        preloadWrapper.style.transition = "opacity 1s 0.5s";
+                        preloadWrapper.style.willChange = "opacity";
+                        preloadWrapper.style.opacity = "0";
+
+                        setTimeout(function () {
+                            preloadWrapper.remove();
+                        }, 1500);
+
+                        setTimeout(function () {
+                            // document.querySelector(".page-lock").classList.remove("page-lock");
+                        }, 1000);
+                    }, 1000)
+                }
+            })();
+        </script>
+
+        <!-- POTENTIAL IN INDIA section-->
+
+        <section class="potential-sec">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-12">
+                        <h1>POTENTIAL IN <br><span class="underline">INDIA</span></h1>
+                    </div>
+                    <div class="col-6 col-sm-12">
+                        <p>
+                            The emergence and growth of the home decor industry
+                            in India are unprecedented. Home decor market was
+                            valued at $616.6 billion in 2019 and is estimated to
+                            reach $838.6 billion by 2027, registering a CAGR of
+                            3.9% from 2020 to 2027. With the rise of digitization
+                            among the young population and rise of income has
+                            increased the demand for luxurious homes and one of
+                            the key industries riding this tide is the home decor
+                            business.
+                        </p>
+                    </div>
+                </div>
+                <div class="row margin--top--bottom">
+                    <div class="col-6 col-md-12 col-sm-12 relat-4">
+                        <img data-aos src="./img/17.jpg" alt="">
+                        <div class="relat-4__img--left"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- POTENTIAL IN INDIA section End-->
+
+
+<!-- HM PHILOSOPHY Section Start -->
+        <section class="philosophy-sec" >
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-sm-12">
+                        <h1>HOME DECOR <br><span>PHILOSOPHY</span></h1>
+                        <div class="philosophy-text">
+                           <!-- <div class="philosophy-text1"> -->
+                           <div class="" style="border-bottom: 1px dashed #c5a47e;">
+                            <h3>VISION</h3>
+                            <p>To bring India at par with international home decor
+                                standards and transform it into one of the most luxurious
+                                home decor destinations in the world.</p>
+                           </div>
+                           <div class="" style="border-bottom: 1px dashed #c5a47e;">
+                            <h3>MISSION</h3>
+                            <p>To present our clientele with ‘a sense of
+                                exclusiveness’, high-quality home décor collection with
+                                international standards.</p>
+                           </div>
+                           <div class="">
+                            <h3>AIM</h3>
+                            <p>To create India’s most influential tailor made fashion
+                                decor brand, FTV Home Decor, which sets a benchmark
+                                for the rest of the home décor industry.</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-12">
+                       <div class="philosophy-video relat-1">
+                        <video id="desktop" loop="true" autoplay="autoplay" muted class="">
+                            <source src="./img/video/page-video/Philosophy home decor.mp4" type="video/mp4">
+                        </video>
+                        <video id="mobile" loop="true" autoplay="autoplay" muted class="">
+                            <source src="./img/video/page-video/Philosophy home decor- Mobile.mp4" type="video/mp4">
+                        </video>
+                        <img data-aos src="./img/with-video.png" alt="">
+                        <div class="relat-1__img--right"></div>
+                        <div class="relat-1__img--left"></div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!-- HM PHILOSOPHY Section End -->
+
+
+        <div id="menu__wrapper">
+            <div class="menu__wrapper">
+                <div class="menu__contacts">
+                    <div class="menu__logo">
+                        <img style="width:150px; height: 163px;" src="./img/icons/home-decor-logo.svg" alt="">
+                    </div>
+                    <p class="menu__text">Stay with us</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                    </div>
+                    <!-- <p class="menu__phone"><a class="" href="tel:+91">+91 999 999 9999</a></p> -->
+
+
+                </div>
+                <div class="menu__nav">
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link" data-scroll href="./index.html">Home</a>
+                        </li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./micheladam.html">Michel
+                                Adam</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./kashiffkhan.html">Kashiff
+                                Khan</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./fashiontv.html">FashionTv</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./channel.html">Channel</a></li>
+                        
+                        
+                    </ul>
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link menu__link--active" data-scroll href="./homedecor.html">Home Decor</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./product.html">Product
+                            </a></li>                           
+                        <li class="list__item"><a class="menu__link " href="./franchise.html">Franchise</a></li>
+                    </ul>
+                </div>
+                <div class="menu__icon-exit">
+                    <img src="./img/icons/exit.svg"
+                        data-izimodal-close>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__arrow-top">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px"
+                height="20px">
+                <path fill-rule="evenodd" fill="rgb(197, 164, 126)"
+                    d="M0.644,11.552 L8.317,19.341 C9.165,20.201 10.539,20.201 11.386,19.341 C12.234,18.481 12.234,17.086 11.386,16.225 L5.248,9.994 L11.386,3.763 C12.234,2.902 12.234,1.508 11.386,0.647 C10.539,-0.213 9.165,-0.213 8.317,0.647 L0.644,8.436 C-0.204,9.297 -0.204,10.692 0.644,11.552 Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 footer--order">
+                    <div class="footer__logo" data-aos="zoom-in-up">
+                        <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="wrapper modal-form__wrapper">
+                        <h1 class="modal-form__subtitle">Subscribe to the Newsletter</h1>
+                       <form action="./api.php" method="post">
+                        <label><i style="color: #c5a47e;
+                           " class="far fa-envelope">
+                                <input type="email" name="nemail" class="modal-form__input" placeholder="youremail@domain.com" /></i>
+                                <input type="hidden" name="url" value="" id="currentURL">
+                                 <script>
+                        document.getElementById("currentURL").value = window.location.href;
+                    </script>
+                            <button type="submit" name="newsletter_submit" class="modal-form-my-btn">Subscribe</button></label>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 footer--order">
+                    <div class="footer__line footer__text--under"></div>
+                    <h3 class="footer__title social-m">Stay with us</h3>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="career-links">
+                    <a href="./career.html">Career   | </a> 
+                    <a href="./privacy-policy.html"> Privacy Policy  | </a> 
+                    <a href="./terms&conditions.html"> Terms and Conditions   </a> 
+                    
+                </div>
+                <div class="copyright">
+                    <p>© copyright 2021 FashionTV all rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/typed.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script type='text/javascript' src='./js/vendor.js' id='mr-libs-js'></script>
+    <script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js?ver=1.0.0.1630314002'
+        id='mr-map-js'></script>
+
+    <script type='text/javascript' src='./js/script.js' id='mr-custom-js'></script>
+    <script>
+        jQuery(function () {
+            AOS.init({
+                startEvent: 'load',
+                duration: 1200,
+                easing: 'ease-in-out-back'
+            });
+        });
+        jQuery(window).on('load', function () {
+            AOS.refresh();
+        });
+    </script>
+</body>
+
+</html>

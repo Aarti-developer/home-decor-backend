@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+    <title>Home Decor</title>
+    <link href="./img/icons/favicon.png" rel="icon">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' id='wp-block-library-css' href='./css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='mr-map-css'
+        href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css?ver=1.0.0.1630313995' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='mr-styles-css' href='./css/style2.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script type='text/javascript' src='./js/jquery.min.js' id='jquery-core-js'></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+
+        document.addEventListener('aos:in:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to display element with custom event started');
+        });
+        document.addEventListener('aos:out:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to hide element with custom event started');
+        });
+    </script>
+
+</head>
+
+<body class="home page-template-default page page-id-41 wp-embed-responsive group-blog">
+
+    <header class="header-nav">
+    </header>
+
+    <main>
+
+        <div class="preload-wrapper">
+            <div class="preload" id="preload">
+                <svg class="preload__box" xmlns="http://www.w3.org/2000/svg" width="502" height="502"
+                    viewBox="0 0 502 502">
+                    <svg class="preload__rect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 502">
+                        <rect class="preload__rect-1" x="2.5" y="2.5" width="349px" height="349"></rect>
+                        <rect class="preload__rect-2" x="2.5" y="2.5" width="349px" height="349"></rect>
+                    </svg>
+                    <div class="preload__logo">
+                        <a href="#">
+                            <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" class="img">
+                        </a>
+                    </div>
+                    <span class="preload__precent">
+                        <span id="preloadPrecent"></span>%
+                    </span>
+                </svg>
+            </div>
+        </div>
+        <section class="mr-hero">
+
+            <div class="bg-video">
+                <div class="bg-video__content">
+                    <video id="desktop" autoplay muted id="vid">
+                        <source src="./img/video/page-video/Exclusive DESIGN Home decor.mp4" type="video/mp4">
+                    </video>
+                    <video id="mobile" autoplay muted id="vid">
+                        <source src="./img/video/page-video/Exclusive DESIGN Home decor- Mobile.mp4"
+                            type="video/mp4">
+                    </video>
+                </div>
+                <script>
+                    document.getElementById('vid').play();
+                </script>
+            </div>
+            <div class="container">
+                <div class="mr-hero__wrapper">
+                    <div class="mr-hero__logo">
+                        <a href="#">
+                            <img src="./img/icons/home-decor-logo.svg" alt="" class="img">
+                        </a>
+                    </div>
+                    <h1 class="mr-hero__title">EXCLUSIVE<span class="element"> DESIGN</span></h1>
+                    <p class="mr-hero__subtitle">
+                        From idea to full turnkey installation
+                    </p>
+                </div>
+            </div>
+            <div class="mr-hero__arrow">
+                <img src="./img/icons/arrow.png" alt="">
+            </div>
+            <div class="mr-hero__sidebar">
+                <div class="mr-hero__btn-show-menu">
+                    <a data-izimodal-open="#menu__wrapper">
+                        <div href="#" class="mr-hero__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20px" height="14px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                    d="M0.000,14.000 L0.000,12.000 L20.000,12.000 L20.000,14.000 L0.000,14.000 ZM5.000,6.000 L20.000,6.000 L20.000,8.000 L5.000,8.000 L5.000,6.000 ZM0.000,-0.000 L20.000,-0.000 L20.000,2.000 L0.000,2.000 L0.000,-0.000 Z" />
+                            </svg>
+                        </div>
+                        <p>Menu</p>
+                    </a>
+                    <a href="./franchise.html#enquiry-now"> <p> Enquire Now</p></a>
+                </div>
+
+            </div>
+        </section>
+        <script>
+            (function () {
+                var preloadWrapper = document.querySelector(".preload-wrapper");
+                var preload = document.querySelector("#preload");
+                var preloadPrecent = preload.querySelector("#preloadPrecent");
+                var preloadRect = preload.querySelector(".preload__rect-2");
+
+                // Get All Images
+                var images = [];
+                var allImages = document.querySelectorAll("img");
+                var skipImages = "swiper-lazy";
+
+                for (var i = 0; i < allImages.length; i++) {
+                    if (allImages[i].classList.contains(skipImages)) continue;
+                    images.push(allImages[i].src);
+                }
+
+                var totalImages = images.length;
+                var loadedImages = 0;
+                var currentPrecent = 0;
+                var i = 0;
+                for (var i = 0; i < totalImages; i++) {
+                    var imageClone = new Image();
+                    imageClone.src = images[i];
+
+                    imageClone.onload = function () {
+                        loadedImages++;
+                        var first = loadedImages == 1 ? true : false;
+                        currentPrecent = getPrecent(totalImages, loadedImages);
+                        pushPrecent(currentPrecent, first);
+                        pushLine(currentPrecent);
+                        if (loadedImages == totalImages) finish();
+                    };
+
+                    imageClone.onerror = function () {
+                        totalImages--;
+                    };
+                }
+
+                // push precent
+                function pushPrecent(new_precent, isFirst) {
+                    if (isFirst) {
+                        // create first span
+                        var span1 = document.createElement("span");
+                        span1.dataset.oldPrecent = "";
+                        preloadPrecent.appendChild(span1);
+
+                        // create second span
+                        var span2 = document.createElement("span");
+                        span2.dataset.newPrecent = "";
+                        span2.innerHTML = new_precent;
+                        preloadPrecent.appendChild(span2);
+                    }
+
+                    var newPrecent = preloadPrecent.querySelector("[data-new-precent]");
+                    var oldPrecent = preloadPrecent.querySelector("[data-old-precent]");
+
+                    newPrecent.removeAttribute("data-new-precent");
+                    newPrecent.dataset.oldPrecent = '';
+
+                    oldPrecent.innerHTML = new_precent;
+                    oldPrecent.removeAttribute("data-old-precent");
+                    oldPrecent.dataset.newPrecent = '';
+                }
+
+                // push line
+                function pushLine(new_value) {
+                    var FULL = 280;
+                    var currentLine = FULL - (FULL * new_value / 100) + "%";
+
+                    preloadRect.style.getPropertyValue("--preload-dasharray");
+                    preloadRect.style.setProperty("--preload-dasharray", currentLine);
+                }
+
+                // get precent
+                function getPrecent(total, loaded) {
+                    return Math.round(loaded * 100 / total);
+                }
+
+                // finish
+                function finish() {
+                    setTimeout(function () {
+                        preloadWrapper.classList.add("preload-wrapper--finish");
+                        preloadWrapper.style.transition = "opacity 1s 0.5s";
+                        preloadWrapper.style.willChange = "opacity";
+                        preloadWrapper.style.opacity = "0";
+
+                        setTimeout(function () {
+                            preloadWrapper.remove();
+                        }, 1500);
+
+                        setTimeout(function () {
+                            // document.querySelector(".page-lock").classList.remove("page-lock");
+                        }, 1000);
+                    }, 1000)
+                }
+            })();
+        </script>
+        <section class="about-us bg-mobile bg-mobile--1" id="who-us">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-6 about-us__left">
+                        <div class="about-us__left relat-1">
+                            <img alt="" class="image image--1" src="./img/intro-image.png" data-aos>
+                            <div class="relat-1__img--right"></div>
+                            <div class="relat-1__img--left"></div>
+                        </div>
+                    </div>
+                    <div class="col-6 about-us__right bg-text">
+                        <div class="about-us__text-info" data-aos-duration="600" data-aos="fade-up">
+                            <h2 class="about-us__title">INTRODUCTION</p>
+                            </h2>
+                            <p class="about-us__text">
+                                We at FTV home decor introduce standardized international home
+                                decor services for Indian citizens. We aspire to become the leader
+                                of the luxury home decor business providing world-class home
+                                decor collection to our clients. Essential home decor services
+                                include: furniture and decor for living room, bedroom, kids room,
+                                mattresses, furnishings, decor, lighting, modular furniture, home
+                                services and more.
+                                A diverse array of services to give luxurious home experiences
+                                which makes you feel comfortable and warm in a homely space.
+                                We plan to curate the most luxurious home decor experience in
+                                India.
+                            </p>
+                        </div>
+                        <div class="bg-lines bg-lines--why-us"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+        <section class="about-us">
+            <div class="container">
+                <div class="row bg-mobile">
+                    <div class="col-6 col-md-6 about-us__right">
+                        <img style="transform: rotate(-90deg);position: absolute; opacity: 0.1;"
+                            src="./img/icons/Asset 5.png" alt="" srcset="">
+
+                        <div class="about-us__text--div">
+                            <h2 class="about-us__title about-us__title--two about-us__left-p" data-aos-duration="600" data-aos="fade-up">
+                                <span>WALL</span>DECOR
+                            </h2>
+                            <p>
+                                Walls can make or break your space, add some
+                                beautiful accents to your walls, with a wide
+                                range of selection for our stores
+                            </p>
+                            <div class="about-us__item">
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/wall_lamp.png" alt="" srcset="">
+                                    <h3>Wall accents</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/file_cabinet.png" alt="" srcset="">
+                                    <h3>Wall cabinets</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/mirror.png" alt="" srcset="">
+                                    <h3>Mirrors</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/clock.png" alt="" srcset="">
+                                    <h3>Clocks</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/partition.png" alt="" srcset="">
+                                    <h3>Screens & dividers</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/frame.png" alt="" srcset="">
+                                    <h3>Photo frames</h3>
+                                </div>
+                                <div class="about-us__items" data-aos-duration="600" data-aos-delay="200"
+                                    data-aos="fade-up">
+                                    <img src="./img/icons/keys.png" alt="" srcset="">
+                                    <h3>Key holders</h3>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-6 col-md-6 about-us__right text-center relat-2">
+                        <div class="about-us-video relat-1">
+                            <video id="desktop" loop="true" autoplay="autoplay" muted class="">
+                                <source src="./img/video/page-video/Wall accents our products.mp4" type="video/mp4">
+                            </video>
+                            <video id="mobile" loop="true" autoplay="autoplay" muted class="">
+                                <source src="./img/video/page-video/Wall accents our products.mp4" type="video/mp4">
+                            </video>
+                            <img data-aos src="./img/with-video.png" alt="">
+                            <div class="relat-1__img--right"></div>
+                            <div class="relat-1__img--left"></div>
+                           </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="features bottom-medium">
+            <div class="container">
+                <div class="row features__items">
+                    <div class="col-sm-6 features__items--one order-">
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide"><img src="./img/Wall_decor/1.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/2.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/3.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/4.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/5.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/6.jpg" alt=""></div>
+                              <div class="swiper-slide"><img src="./img/Wall_decor/1.jpg" alt=""></div>
+                            </div>
+                            <style>
+                                .swiper-pagination-bullet-active {
+                                        opacity: 1;
+                                        background: var(--swiper-pagination-color, var(--swiper-theme-color));
+                                        background-color: #c5a47e;
+                                    }
+                            </style>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                        <!-- <div class="features__slider-wrapper" data-aos-duration="700" data-aos="fade-up">
+                            <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                                <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+
+                                    <div class="swiper-slide swiper-slide-active" style="width: 556px;">
+                                        <img width="640" height="720"
+                                            src="./img/Wall_decor/1.jpg"
+                                            class="attachment-large size-large" alt="" loading="lazy" width="640"
+                                            height="640" sizes="(max-width: 640px) 100vw, 640px"
+                                        />
+
+                                    </div>
+
+                                    <div class="swiper-slide swiper-slide-active" style="width: 556px;">
+                                        <img width="640" height="720"
+                                            src="./img/Wall_decor/2.jpg"
+                                            class="attachment-large size-large" alt="" loading="lazy" width="640"
+                                            height="640" sizes="(max-width: 640px) 100vw, 640px"
+                                        />
+                                    </div>
+
+                                    <div class="swiper-slide swiper-slide-active" style="width: 556px;">
+                                        <img width="640" height="720"
+                                            src="./img/Wall_decor/3.jpg"
+                                            class="attachment-large size-large" alt="" loading="lazy" width="640"
+                                            height="640" sizes="(max-width: 640px) 100vw, 640px"
+                                        />
+                                    </div>
+
+                                    <div class="swiper-slide swiper-slide-active" style="width: 556px;">
+                                        <img width="640" height="720"
+                                            src="./img/Wall_decor/4.jpg"
+                                            class="attachment-large size-large" alt="" loading="lazy" width="640"
+                                            height="640" sizes="(max-width: 640px) 100vw, 640px"
+                                        />
+                                    </div>
+
+                                    <div class="swiper-slide swiper-slide-active" style="width: 556px;">
+                                        <img width="640" height="720"
+                                            src="./img/Wall_decor/5.jpg"
+                                            class="attachment-large size-large" alt="" loading="lazy" width="640"
+                                            height="640" sizes="(max-width: 640px) 100vw, 640px"
+                                        />
+                                    </div>
+                                </div>
+                                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                            </div>
+                            <div class="swiper_controll">
+                                <div class="swiper-btn-prev swiper-button-disabled" tabindex="0" role="button"
+                                    aria-label="Previous slide" aria-disabled="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="23px" height="16px">
+                                        <path fill-rule="evenodd" fill="rgb(197, 164, 126)"
+                                            d="M21.941,9.000 L3.601,9.000 L9.161,14.292 C9.571,14.683 9.571,15.315 9.161,15.707 C8.750,16.097 8.085,16.097 7.675,15.707 L0.322,8.706 C-0.088,8.316 -0.088,7.683 0.322,7.292 L7.675,0.292 C7.880,0.097 8.149,-0.001 8.418,-0.001 C8.687,-0.001 8.955,0.097 9.161,0.292 C9.571,0.683 9.571,1.316 9.161,1.706 									L3.601,7.000 L21.941,7.000 C22.521,7.000 22.992,7.447 22.992,7.999 C22.992,8.552 22.521,9.000 21.941,9.000 Z" />
+                                    </svg>
+                                </div>
+                                <div class="swiper-btn-next" tabindex="0" role="button" aria-label="Next slide"
+                                    aria-disabled="false">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        width="23px" height="16px">
+                                        <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                            d="M1.059,9.000 L19.399,9.000 L13.839,14.292 C13.429,14.683 13.429,15.315 13.839,15.707 C14.250,16.097 14.915,16.097 15.325,15.707 L22.678,8.706 C23.088,8.316 23.088,7.683 22.678,7.292 L15.325,0.292 C15.120,0.097 14.851,-0.001 14.582,-0.001 C14.313,-0.001 14.044,0.097 13.839,0.292 C13.429,0.683 13.429,1.316 13.839,1.706 L19.399,7.000 L1.059,7.000 C0.478,7.000 0.008,7.447 0.008,7.999 C0.008,8.552 0.478,9.000 1.059,9.000 Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="col-sm-6 features__items--two order-0">
+                        <div class="features__items">
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="200" data-aos="fade-up">
+                                <h3 class="features__subtitle">Magazine holders</h3>
+                            </div>
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="300" data-aos="fade-up">
+                                <h3 class="features__subtitle">Metal/wooden wall art</h3>
+
+                            </div>
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="400" data-aos="fade-up">
+                                <h3 class="features__subtitle">Murals</h3>
+                            </div>
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="400" data-aos="fade-up">
+                                <h3 class="features__subtitle">Wall plates & tiles</h3>
+                            </div>
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="400" data-aos="fade-up">
+                                <h3 class="features__subtitle">Ethnic art </h3>
+                            </div>
+                            <div class="features__item" data-aos-duration="600" data-aos-delay="400" data-aos="fade-up">
+                                <h3 class="features__subtitle">Faux animal busts</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section style=" border-top: 1px dashed #c5a47e;">
+            <div class="container">
+                <!-- Home Garden start -->
+                <div class="row bg-mobile bg-mobile--2">
+                    <div class="col-6 about-us__right text-center dn-512">
+                        <div class="hm-garden-video">
+                            <video id="desktop" loop="true" autoplay="autoplay" muted class="">
+                                <source src="./img/video/page-video/Home Garden our producted.mp4" type="video/mp4">
+                            </video>
+                            <video id="mobile" loop="true" autoplay="autoplay" muted class="">
+                                <source src="./img/video/page-video/Home Garden our producted.mp4" type="video/mp4">
+                            </video>
+
+                        </div>
+                    </div>
+                    <div class="col-6 about-us__right">
+                        <div class="about-us__text--div">
+                            <h2 class="about-us__title about-us__title--two" data-aos-duration="600" data-aos="fade-up">
+                                <span>HOME</span>GARDEN
+                            </h2>
+                            <p>A home garden gives you the opportunity to grow your own
+                                veggies and leaves. It is an excellent stress reliever and offers
+                                relaxation from repetitive tasks
+                            </p>
+
+                            <div class="home-gard__item container">
+                                <div class="home-gard__items home-gard__item-one">
+                                    <img src="./img/icons/pot.png" alt="" srcset="">
+                                    <h3>Pots & planters</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-two">
+                                    <img src="./img/icons/plants.png" alt="" srcset="">
+                                    <h3>Natural plants</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-two">
+                                    <img src="./img/icons/spa.png" alt="" srcset="">
+                                    <h3>Decorative pebbles</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-one">
+                                    <img src="./img/icons/fountain.png" alt="" srcset="">
+                                    <h3>Indoor fountains</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-one">
+                                    <img src="./img/icons/miniature.png" alt="" srcset="">
+                                    <h3>Garden figurines</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-two">
+                                    <img src="./img/icons/bird_house.png" alt="" srcset="">
+                                    <h3>Bird houses</h3>
+                                </div>
+                                <div class="home-gard__items home-gard__item-two">
+                                    <img src="./img/icons/lavender.png" alt="" srcset="">
+                                    <h3>Artificial plants,
+                                        flowers & grass</h3>
+
+                                </div>
+                                <div class="home-gard__items">
+                                    <i style="font-size: 25px; color: #c5a47e;" class="fas fa-long-arrow-alt-left"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Home Garden End -->
+
+                <!-- Spirit start -->
+                <div class="row spirit-mar ">
+                    <div class="col-lg-6 col-md-12  margin--bottom">
+
+                        <div class="spirit-sec-text ">
+                            <h1>SPIRITUAL <span>SHOWPIECES</span> </h1>
+                            <p>
+                                Your beliefs can transpire to show in your decor
+                                taste. Make sure you choose the right pieces.
+                            </p>
+                        </div>
+                        <div class="spirit-sec-border">
+                            <img src="./img/icons/border.png" alt="">
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-lg-6 col-md-12 col-sm-12 order-"> -->
+                        <div class="col-lg-6 col-md-12">
+                            <div class="spirit-video">
+                                <video id="desktop" loop="true" autoplay="autoplay" muted class="">
+                                    <source src="./img/video/page-video/Spiritual showpieces our producted.mp4" type="video/mp4">
+                                </video>
+                                <video id="mobile" loop="true" autoplay="autoplay" muted class="">
+                                    <source src="./img/video/page-video/Spiritual showpieces our producted.mp4" type="video/mp4">
+                                </video>
+                               </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <!-- Spirit End -->
+            </div>
+        </section>
+
+        <div id="menu__wrapper">
+            <div class="menu__wrapper">
+                <div class="menu__contacts">
+                    <div class="menu__logo">
+                        <img style="width:150px; height: 163px;" src="./img/icons/home-decor-logo.svg" alt="">
+
+                    </div>
+                    <p class="menu__text">Stay with us</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                    </div>
+                    <!-- <p class="menu__phone"><a class="" href="tel:+91">+91 999 999 9999</a></p> -->
+                </div>
+                <div class="menu__nav">
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link menu__link--active" data-scroll href="./index.html">Home</a>
+                        </li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./micheladam.html">Michel
+                                Adam</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./kashiffkhan.html">Kashiff
+                                Khan</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./fashiontv.html">FashionTv</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./channel.html">Channel</a></li>
+                        
+                        
+                    </ul>
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link" data-scroll href="./homedecor.html">Home Decor</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./product.html">Product
+                            </a></li>                           
+                        <li class="list__item"><a class="menu__link " href="./franchise.html">Franchise</a></li>
+                    </ul>
+                </div>
+                <div class="menu__icon-exit">
+                    <img src="./img/icons/exit.svg" data-izimodal-close>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </main>
+    
+   
+    <footer class="footer">
+        <div class="footer__arrow-top">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px"
+                height="20px">
+                <path fill-rule="evenodd" fill="rgb(197, 164, 126)"
+                    d="M0.644,11.552 L8.317,19.341 C9.165,20.201 10.539,20.201 11.386,19.341 C12.234,18.481 12.234,17.086 11.386,16.225 L5.248,9.994 L11.386,3.763 C12.234,2.902 12.234,1.508 11.386,0.647 C10.539,-0.213 9.165,-0.213 8.317,0.647 L0.644,8.436 C-0.204,9.297 -0.204,10.692 0.644,11.552 Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 footer--order">
+                    <div class="footer__logo" data-aos="zoom-in-up">
+                        <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="wrapper modal-form__wrapper">
+                        <h1 class="modal-form__subtitle">Subscribe to the Newsletter</h1>
+                        <form action="./api.php" method="post">
+                        <label><i style="color: #c5a47e;
+                           " class="far fa-envelope">
+                                <input type="email" name="nemail" class="modal-form__input" placeholder="youremail@domain.com" /></i>
+                                <input type="hidden" name="url" value="" id="currentURL">
+                                 <script>
+                        document.getElementById("currentURL").value = window.location.href;
+                    </script>
+                            <button type="submit" name="newsletter_submit" class="modal-form-my-btn">Subscribe</button></label>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 footer--order">
+                    <div class="footer__line footer__text--under"></div>
+                    <h3 class="footer__title social-m">Stay with us</h3>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="career-links">
+                    <a href="./career.html">Career   | </a> 
+                    <a href="./privacy-policy.html"> Privacy Policy  | </a> 
+                    <a href="./terms&conditions.html"> Terms and Conditions   </a> 
+                    
+                </div>
+                <div class="copyright">
+                    <p>© copyright 2021 FashionTV all rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="./js/typed.js"></script> -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js?ver=1.0.0.1630314002'
+        id='mr-map-js'></script>
+        
+    <script type='text/javascript' src='./js/vendor.js' id='mr-libs-js'></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type='text/javascript' src='./js/script.js' id='mr-custom-js'></script>
+    <script>
+        jQuery(function () {
+            AOS.init({
+                startEvent: 'load',
+                duration: 1200,
+                easing: 'ease-in-out-back'
+            });
+        });
+        jQuery(window).on('load', function () {
+            AOS.refresh();
+        });
+    </script>
+    <script>
+        var swiper2 = new Swiper(".mySwiper2", {
+        grabCursor: true,
+        effect: "creative",
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: ["-120%", 0, -500],
+          },
+          next: {
+            shadow: true,
+            translate: ["120%", 0, -500],
+          },
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+    </script>
+    
+    <!-- <script>
+        $(window).scroll(function() {
+    if ($(this).scrollTop()) {
+        $('#toTop').fadeIn();
+    } else {
+        $('#toTop').fadeOut();
+    }
+});
+
+$("#toTop").click(function () {
+   $("html, body").animate({scrollTop: 0}, 1000);
+});
+    </script> -->
+</body>
+
+</html>

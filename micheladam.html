@@ -1,0 +1,529 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+    <title>Home Decor</title>
+    <meta name="description" content="" />
+    <link href="./img/icons/favicon.png" rel="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' id='wp-block-library-css' href='./css/style.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='mr-map-css'
+        href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css?ver=1.0.0.1630313995' type='text/css'
+        media='all' />
+    <link rel='stylesheet' id='mr-styles-css' href='./css/style2.css' type='text/css' media='all' />
+    <script type='text/javascript' src='./js/jquery.min.js' id='jquery-core-js'></script>
+ 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        document.addEventListener('aos:in:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to display element with custom event started');
+        });
+        document.addEventListener('aos:out:customEventName', ({ detail }) => {
+            console.log(detail + 'animation to hide element with custom event started');
+        });
+    </script>
+
+</head>
+
+<body class="home page-template-default page page-id-41 wp-embed-responsive group-blog">
+
+    <header class="header-nav">
+    </header>
+
+    <main>
+
+        <div class="preload-wrapper">
+            <div class="preload" id="preload">
+                <svg class="preload__box" xmlns="http://www.w3.org/2000/svg" width="502" height="502"
+                    viewBox="0 0 502 502">
+                    <svg class="preload__rect" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 502 502">
+                        <rect class="preload__rect-1" x="2.5" y="2.5" width="349px" height="349"></rect>
+                        <rect class="preload__rect-2" x="2.5" y="2.5" width="349px" height="349"></rect>
+                    </svg>
+                    <div class="preload__logo">
+                        <a href="#">
+                            <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" class="img">
+                        </a>
+                    </div>
+                    <span class="preload__precent">
+                        <span id="preloadPrecent"></span>%
+                    </span>
+                </svg>
+            </div>
+        </div>
+        <section class="mr-hero">
+            <div class="bg-video">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="bg-video__content">
+                                <video id="desktop"  autoplay muted id="vid">
+                                    <source src="./img/video/page-video/Michel adam-1.mp4"
+                                        type="video/mp4">                               
+                                </video>
+                                <video id="mobile" autoplay muted id="vid">
+                                    <source src="./img/video/page-video/MICHEL ADAM -mobile.mp4"
+                                        type="video/mp4">                               
+                                </video>
+                            </div> 
+                            <script>
+                                document.getElementById('vid').play();
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="mr-hero__wrapper">
+                    <div class="mr-hero__logo">
+                        <a href="#">
+                            <img src="./img/icons/home-decor-logo.svg" alt="" class="img">
+                        </a>
+                    </div>                 
+                    <h1 class="mr-hero__title">MICHEL<span class="element"> <br> ADAM</span></h1>
+                    <p class="mr-hero__subtitle">
+                        Founder and chairman of FashionTV
+                    </p>
+                </div>
+            </div>
+            <div class="mr-hero__arrow">
+                <img src="./img/icons/arrow.png" alt="">
+            </div>
+            <div class="mr-hero__sidebar">
+                <div class="mr-hero__btn-show-menu">
+                    <a data-izimodal-open="#menu__wrapper">
+                        <div href="#" class="mr-hero__icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                width="20px" height="14px">
+                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                    d="M0.000,14.000 L0.000,12.000 L20.000,12.000 L20.000,14.000 L0.000,14.000 ZM5.000,6.000 L20.000,6.000 L20.000,8.000 L5.000,8.000 L5.000,6.000 ZM0.000,-0.000 L20.000,-0.000 L20.000,2.000 L0.000,2.000 L0.000,-0.000 Z" />
+                            </svg>
+                        </div>
+                        <p>Menu</p>
+                    </a>
+                    <a href="./franchise.html#enquiry-now"> <p> Enquire Now</p></a>
+                </div>
+
+            </div>
+        </section>
+        <script>
+            (function () {
+                var preloadWrapper = document.querySelector(".preload-wrapper");
+                var preload = document.querySelector("#preload");
+                var preloadPrecent = preload.querySelector("#preloadPrecent");
+                var preloadRect = preload.querySelector(".preload__rect-2");
+
+                // Get All Images
+                var images = [];
+                var allImages = document.querySelectorAll("img");
+                var skipImages = "swiper-lazy";
+
+                for (var i = 0; i < allImages.length; i++) {
+                    if (allImages[i].classList.contains(skipImages)) continue;
+                    images.push(allImages[i].src);
+                }
+
+                var totalImages = images.length;
+                var loadedImages = 0;
+                var currentPrecent = 0;
+                var i = 0;
+                for (var i = 0; i < totalImages; i++) {
+                    var imageClone = new Image();
+                    imageClone.src = images[i];
+
+                    imageClone.onload = function () {
+                        loadedImages++;
+                        var first = loadedImages == 1 ? true : false;
+                        currentPrecent = getPrecent(totalImages, loadedImages);
+                        pushPrecent(currentPrecent, first);
+                        pushLine(currentPrecent);
+                        if (loadedImages == totalImages) finish();
+                    };
+
+                    imageClone.onerror = function () {
+                        totalImages--;
+                    };
+                }
+
+                // push precent
+                function pushPrecent(new_precent, isFirst) {
+                    if (isFirst) {
+                        // create first span
+                        var span1 = document.createElement("span");
+                        span1.dataset.oldPrecent = "";
+                        preloadPrecent.appendChild(span1);
+
+                        // create second span
+                        var span2 = document.createElement("span");
+                        span2.dataset.newPrecent = "";
+                        span2.innerHTML = new_precent;
+                        preloadPrecent.appendChild(span2);
+                    }
+
+                    var newPrecent = preloadPrecent.querySelector("[data-new-precent]");
+                    var oldPrecent = preloadPrecent.querySelector("[data-old-precent]");
+
+                    newPrecent.removeAttribute("data-new-precent");
+                    newPrecent.dataset.oldPrecent = '';
+
+                    oldPrecent.innerHTML = new_precent;
+                    oldPrecent.removeAttribute("data-old-precent");
+                    oldPrecent.dataset.newPrecent = '';
+                }
+
+                // push line
+                function pushLine(new_value) {
+                    var FULL = 280;
+                    var currentLine = FULL - (FULL * new_value / 100) + "%";
+
+                    preloadRect.style.getPropertyValue("--preload-dasharray");
+                    preloadRect.style.setProperty("--preload-dasharray", currentLine);
+                }
+
+                // get precent
+                function getPrecent(total, loaded) {
+                    return Math.round(loaded * 100 / total);
+                }
+
+                // finish
+                function finish() {
+                    setTimeout(function () {
+                        preloadWrapper.classList.add("preload-wrapper--finish");
+                        preloadWrapper.style.transition = "opacity 1s 0.5s";
+                        preloadWrapper.style.willChange = "opacity";
+                        preloadWrapper.style.opacity = "0";
+
+                        setTimeout(function () {
+                            preloadWrapper.remove();
+                        }, 1500);
+
+                        setTimeout(function () {
+                            // document.querySelector(".page-lock").classList.remove("page-lock");
+                        }, 1000);
+                    }, 1000)
+                }
+            })();
+        </script>
+        <section class="about-us bg-mobile bg-mobile--1" id="who-us">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-6 about-us__left">
+                        <div class="about-us__left relat-1">
+
+                            <img alt="" class="image image--1"
+                                src="./img/intro-1.png"
+                               
+                                data-aos>
+                            <div class="relat-1__img--right"></div>
+                            <div class="relat-1__img--left"></div>
+
+                        </div>
+                    </div>
+                    <div class="col-6 about-us__right bg-text">
+                        <div class="about-us__text-info" data-aos-duration="600" data-aos="fade-up">
+                            <h2 class="about-us__title">INTRODUCTION</p>
+                            </h2>
+                            <p class="about-us__text">
+                                We at FTV home decor introduce standardized international home
+                                decor services for Indian citizens. We aspire to become the leader
+                                of the luxury home decor business providing world-class home
+                                decor collection to our clients. Essential home decor services
+                                include: furniture and decor for living room, bedroom, kids room,
+                                mattresses, furnishings, decor, lighting, modular furniture, home
+                                services and more.
+                                A diverse array of services to give luxurious home experiences
+                                which makes you feel comfortable and warm in a homely space.
+                                We plan to curate the most luxurious home decor experience in
+                                India.
+                            </p>
+                        </div>
+                        <div class="bg-lines bg-lines--why-us"></div>
+                    </div>
+                </div>
+                <div class="row margin--top">
+                    <div class="col-6 about-us__right bg-text">
+                        <div class="about-us__text-info" data-aos-duration="600" data-aos="fade-up">
+                            <h2 class="about-us__title"><span>BACK</span>GROUND</p></h2>
+                            <p class="about-us__text">
+                                Michel Adam was born on April 16 in Warsaw and is of
+                                Jewish descent. He moved to Vienna in 1958 along with his
+                                family. Later he was granted a scholarship for Mathematics
+                                at Princeton University. Fashion has always been closer to
+                                his heart.
+                                <br/>
+                                Michel Adam later started his own franchise "love-f-cafe" in
+                                various European cities such as Monaco and Milan. He
+                                returned to Vienna with the opening of the café on the
+                                ground floor of the Hotel Bristol next to the opera house in
+                                2013, which became very popular among the fashion
+                                community. This café became a popular destination for
+                                many fashion shows, afterparties and other fashion events.
+                                This is how Michel Adam put the foundation of FashionTV’s
+                                massive empire.
+                            </p>
+                        </div>
+                        <div class="bg-lines bg-lines--why-us"></div>
+                    </div>
+                    <div class="col-6 about-us__left">
+                        <div class="about-us__left relat-1">
+                            <img alt="" class="image image--1"
+                                src="./img/background-1.png"                                
+                                data-aos>
+                            <div class="relat-1__img--right"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Journey SEction Start -->
+<section class="journey-sec--main">
+    <div class="container">
+        <h1>Journey</h1>
+        <div class="journey-sec-bg"></div>
+            <div class="row journey-sec--sub">
+                <div class="col-lg-6">
+                    <div class="abc relat-4">
+                        <img data-aos src="./img/Journey-1.jpg" alt="" srcset="">
+                        <div class="relat-4__img--left"></div>                        
+                    </div>
+                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="journey-text">
+                        <h1>01</h1>
+                        <p>In 1958 his journey began when he travelled
+                            from Poland to Vienna and decided to
+                            venture into a subject that was the closest to
+                            his heart which is Fashion.
+                        </p>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="row journey-sec--sub margin--left" style="align-items: center;">
+                <div class="col-lg-6">
+                    <div class="journey-text" style="align-items: flex-end;">
+                        <h1>02</h1>
+                        <p style="text-align: end;">At first, he started his own textile business in
+                            Thailand under a company called the Eden
+                            Group. Later he moved to France where Michel
+                            Adam Lisowski started a channel that is dedicated
+                            to fashion, it broadcasted 24*7. This led to the
+                            birth of FashionTV, in 1997. Today, FashionTV is 
+                        </p>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>                       
+                    
+                </div>
+                <div class="col-lg-6">
+                    <div class="relat-4 img__align">
+                        <img data-aos src="./img/journey-2.png" alt="" srcset="">
+                        <div class="relat-4__img--left"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row journey-sec--sub margin--top"  style="align-items: center;">
+                <div class="col-lg-6">
+                    <div class="relat-4">
+                        <img data-aos src="./img/journey-3.png" alt="" srcset="">
+                        <div class="relat-4__img--left"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="journey-text">
+                        <h1>03</h1>
+                        <p>Later in 2013, he opened "love-f-cafe" Fashion,
+                            one of his most successful projects. This cafe is
+                            dedicated to fashion enthusiasts. The café is
+                            known as a UTOPIA for fashion. It hosts many
+                            fashion shows, after-parties, and other fashion
+                            events. This cafe is in very high demand amongst
+                            the fashion community.                            
+                        </p>
+                        <i class="fas fa-arrow-left"></i>
+                    </div>
+                </div>
+            </div>
+       
+       
+    </div>
+</section>
+<!-- Journey Section End -->
+
+<!-- Future Section start-->
+<section class="m-future--main">
+    <div class="container m-future-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="m-future--text">
+                    <h1>FUTURE</h1>
+                    <p>
+                        With FashionTV, Michel Adam Lisowski is committed to building partnerships that propel the
+                        partners towards success. <br>
+                        Michel Adam Lisowski's entrepreneurial mindset makes him think beyond, and he is always
+                        interested in taking fashion to new heights. He is keenly aware of the potential and reach of FTV
+                        in India. The brand is introducing various LUXURIOUS FTV businesses in the world’s second
+                        most populated country.
+                    </p>
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>
+<!-- Future Section End-->
+
+<!-- MESSAGE Section start -->
+<!-- MESSAGE Section End -->
+
+        <div id="menu__wrapper">
+            <div class="menu__wrapper">
+                <div class="menu__contacts">
+                    <div class="menu__logo">
+                        <img style="width:150px; height: 163px;" src="./img/icons/home-decor-logo.svg" alt="">
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="208px"
+                            height="163px">
+                            <path fill-rule="evenodd" fill="#333"
+                                d="M202.268,142.062 L190.465,127.435 L190.465,142.062 L183.682,142.062 L183.682,115.835 L189.447,115.835 L201.250,130.495 L201.250,115.835 L207.999,115.835 L207.999,142.062 L202.268,142.062 ZM177.470,159.040 L176.447,159.040 L176.447,161.937 C176.755,162.083 177.087,162.168 177.433,162.217 L177.433,162.865 L173.723,162.865 L173.723,162.217 C174.055,162.168 174.401,162.083 174.721,161.937 L174.721,154.861 C174.401,154.714 174.080,154.628 173.735,154.579 L173.735,153.883 L177.285,153.883 C179.640,153.883 180.712,154.885 180.712,156.303 C180.712,157.330 180.121,158.136 179.110,158.612 L180.786,161.863 C181.106,162.009 181.624,162.168 181.969,162.217 L181.969,162.865 L179.344,162.865 L177.470,159.040 ZM177.260,154.836 L176.447,154.836 L176.447,158.258 L178.074,158.136 C178.641,157.782 178.937,157.195 178.937,156.449 C178.937,155.460 178.296,154.836 177.260,154.836 ZM150.580,115.835 L170.895,115.835 L170.895,122.358 L157.363,122.358 L157.363,126.123 L168.487,126.123 L168.487,132.210 L157.363,132.210 L157.363,135.573 L170.895,135.573 L170.895,142.062 L150.580,142.062 L150.580,115.835 ZM146.226,89.188 L79.844,27.583 L64.037,12.920 L64.037,35.969 L128.683,95.954 L120.409,95.954 L64.037,43.641 L64.037,95.954 L58.384,95.954 L58.384,-0.000 L105.126,43.376 L151.879,-0.000 L151.879,95.954 L146.226,95.954 L146.226,89.188 ZM146.226,12.920 L109.268,47.218 L146.226,81.516 L146.226,12.920 ZM61.252,110.750 C61.252,112.345 59.948,113.637 58.340,113.637 C56.732,113.637 55.428,112.345 55.428,110.750 C55.428,109.156 56.732,107.863 58.340,107.863 C59.948,107.863 61.252,109.156 61.252,110.750 ZM58.313,134.563 C59.229,133.554 59.686,132.097 59.686,130.192 L59.686,115.835 L66.436,115.835 L66.436,130.596 C66.436,132.277 66.170,133.846 65.639,135.304 C65.107,136.761 64.328,138.027 63.299,139.103 C62.269,140.179 60.998,141.026 59.483,141.641 C57.968,142.259 56.227,142.567 54.260,142.567 C52.270,142.567 50.518,142.259 49.003,141.641 C47.488,141.026 46.222,140.179 45.205,139.103 C44.187,138.027 43.418,136.761 42.898,135.304 C42.378,133.846 42.118,132.277 42.118,130.596 L42.118,115.835 L48.901,115.835 L48.901,130.192 C48.901,132.097 49.353,133.554 50.258,134.563 C51.162,135.573 52.496,136.077 54.260,136.077 C56.046,136.077 57.397,135.573 58.313,134.563 ZM50.214,113.637 C48.606,113.637 47.302,112.345 47.302,110.750 C47.302,109.156 48.606,107.863 50.214,107.863 C51.822,107.863 53.126,109.156 53.126,110.750 C53.126,112.345 51.822,113.637 50.214,113.637 ZM38.924,154.579 L38.924,153.883 L45.679,153.883 L45.741,156.571 L44.656,156.571 L44.138,154.836 L41.636,154.836 L41.636,157.721 L44.187,157.721 L44.187,158.747 L41.636,158.747 L41.636,161.937 L44.261,161.937 L44.903,160.262 L45.975,160.262 L45.814,162.865 L38.912,162.865 L38.912,162.217 C39.244,162.168 39.578,162.083 39.898,161.949 L39.898,154.861 C39.590,154.714 39.257,154.628 38.924,154.579 ZM31.459,161.937 L32.101,160.262 L33.173,160.262 L33.013,162.865 L26.110,162.865 L26.110,162.217 C26.443,162.168 26.776,162.083 27.096,161.949 L27.096,154.861 C26.788,154.714 26.455,154.628 26.122,154.579 L26.122,153.883 L32.877,153.883 L32.939,156.571 L31.854,156.571 L31.336,154.836 L28.834,154.836 L28.834,157.721 L31.386,157.721 L31.386,158.747 L28.834,158.747 L28.834,161.937 L31.459,161.937 ZM22.176,129.721 L16.681,141.054 L12.239,141.054 L6.744,129.721 L6.744,142.062 L-0.005,142.062 L-0.005,115.835 L6.812,115.835 L14.443,132.411 L22.108,115.835 L28.925,115.835 L28.925,142.062 L22.176,142.062 L22.176,129.721 ZM14.652,154.861 C14.331,154.714 14.011,154.628 13.666,154.579 L13.666,153.883 L20.421,153.883 L20.494,156.571 L19.397,156.571 L18.880,154.849 L16.377,154.849 L16.377,157.941 L18.942,157.941 L18.942,158.954 L16.377,158.954 L16.377,161.949 C16.686,162.095 17.006,162.168 17.339,162.217 L17.339,162.865 L13.653,162.865 L13.653,162.217 C13.986,162.181 14.331,162.095 14.652,161.949 L14.652,154.861 ZM55.374,154.579 C55.041,154.628 54.696,154.714 54.388,154.861 L54.388,161.973 L56.915,161.973 L57.519,160.262 L58.456,160.262 L58.234,162.865 L51.713,162.865 L51.713,162.217 C52.046,162.181 52.379,162.095 52.699,161.961 L52.699,154.861 C52.391,154.714 52.058,154.628 51.713,154.579 L51.713,153.883 L55.374,153.883 L55.374,154.579 ZM78.854,156.584 L77.819,156.584 L77.436,154.861 L75.908,154.861 L75.908,161.937 C76.216,162.083 76.549,162.168 76.894,162.217 L76.894,162.865 L73.184,162.865 L73.184,162.217 C73.529,162.168 73.874,162.083 74.183,161.937 L74.183,154.861 L72.740,154.861 L72.346,156.584 L71.311,156.584 L71.311,153.883 L78.854,153.883 L78.854,156.584 ZM96.960,116.591 C98.203,117.095 99.233,117.785 100.047,118.660 C100.861,119.533 101.465,120.553 101.861,121.719 C102.256,122.885 102.454,124.117 102.454,125.418 C102.454,126.337 102.347,127.233 102.132,128.108 C101.917,128.982 101.595,129.794 101.166,130.545 C100.736,131.297 100.193,131.980 99.538,132.596 C98.882,133.213 98.113,133.723 97.231,134.127 L102.963,142.062 L94.857,142.062 L89.838,135.034 L86.378,135.034 L86.378,142.062 L79.629,142.062 L79.629,115.835 L92.551,115.835 C94.247,115.835 95.716,116.086 96.960,116.591 ZM86.378,121.954 L86.378,128.948 L92.178,128.948 C92.856,128.948 93.433,128.853 93.908,128.663 C94.382,128.473 94.767,128.220 95.061,127.906 C95.354,127.592 95.570,127.222 95.705,126.796 C95.841,126.371 95.908,125.933 95.908,125.485 C95.908,124.477 95.625,123.636 95.061,122.963 C94.495,122.290 93.534,121.954 92.178,121.954 L86.378,121.954 ZM88.142,154.579 C87.810,154.628 87.514,154.714 87.206,154.861 L87.206,157.708 L90.670,157.708 L90.670,154.861 C90.349,154.714 90.053,154.628 89.720,154.579 L89.720,153.883 L93.369,153.883 L93.369,154.579 C93.036,154.628 92.703,154.714 92.383,154.861 L92.383,161.937 C92.703,162.083 93.036,162.168 93.369,162.217 L93.369,162.865 L89.708,162.865 L89.708,162.217 C90.053,162.168 90.349,162.083 90.670,161.937 L90.670,158.698 L87.206,158.698 L87.206,161.937 C87.514,162.083 87.797,162.168 88.130,162.217 L88.130,162.865 L84.482,162.865 L84.482,162.217 C84.814,162.168 85.148,162.083 85.468,161.949 L85.468,154.861 C85.160,154.714 84.827,154.628 84.482,154.579 L84.482,153.883 L88.142,153.883 L88.142,154.579 ZM100.082,154.861 C99.774,154.714 99.441,154.628 99.109,154.579 L99.109,153.883 L105.863,153.883 L105.925,156.571 L104.840,156.571 L104.323,154.836 L101.820,154.836 L101.820,157.721 L104.372,157.721 L104.372,158.747 L101.820,158.747 L101.820,161.937 L104.446,161.937 L105.086,160.262 L106.159,160.262 L105.999,162.865 L99.097,162.865 L99.097,162.217 C99.429,162.168 99.762,162.083 100.082,161.949 L100.082,154.861 ZM132.435,116.591 C133.678,117.095 134.707,117.785 135.521,118.660 C136.335,119.533 136.940,120.553 137.336,121.719 C137.731,122.885 137.930,124.117 137.930,125.418 C137.930,126.337 137.822,127.233 137.608,128.108 C137.392,128.982 137.070,129.794 136.640,130.545 C136.211,131.297 135.669,131.980 135.012,132.596 C134.357,133.213 133.588,133.723 132.707,134.127 L138.438,142.062 L130.332,142.062 L125.313,135.034 L121.853,135.034 L121.853,142.062 L115.104,142.062 L115.104,115.835 L128.026,115.835 C129.722,115.835 131.191,116.086 132.435,116.591 ZM121.853,121.954 L121.853,128.948 L127.653,128.948 C128.331,128.948 128.908,128.853 129.383,128.663 C129.857,128.473 130.242,128.220 130.536,127.906 C130.829,127.592 131.045,127.222 131.180,126.796 C131.316,126.371 131.384,125.933 131.384,125.485 C131.384,124.477 131.101,123.636 130.536,122.963 C129.971,122.290 129.009,121.954 127.653,121.954 L121.853,121.954 ZM120.259,154.861 C119.939,154.714 119.619,154.628 119.273,154.579 L119.273,153.883 L126.028,153.883 L126.102,156.571 L125.005,156.571 L124.487,154.849 L121.985,154.849 L121.985,157.941 L124.549,157.941 L124.549,158.954 L121.985,158.954 L121.985,161.949 C122.293,162.095 122.613,162.168 122.947,162.217 L122.947,162.865 L119.261,162.865 L119.261,162.217 C119.593,162.181 119.939,162.095 120.259,161.949 L120.259,154.861 ZM135.341,154.579 C134.996,154.628 134.663,154.714 134.355,154.861 L134.355,159.688 C134.355,160.983 134.960,161.900 136.401,161.900 C136.907,161.900 137.338,161.765 137.708,161.533 C138.102,161.106 138.312,160.531 138.312,159.688 L138.312,154.861 C138.004,154.714 137.670,154.628 137.338,154.579 L137.338,153.883 L140.531,153.883 L140.531,154.579 C140.198,154.628 139.864,154.714 139.544,154.861 L139.544,159.688 C139.544,161.789 138.090,162.999 136.032,162.999 C133.961,162.999 132.629,161.581 132.629,159.688 L132.629,154.861 C132.309,154.714 131.976,154.628 131.643,154.579 L131.643,153.883 L135.341,153.883 L135.341,154.579 ZM153.641,156.584 L152.605,156.584 L152.224,154.861 L150.695,154.861 L150.695,161.937 C151.003,162.083 151.335,162.168 151.681,162.217 L151.681,162.865 L147.971,162.865 L147.971,162.217 C148.316,162.168 148.661,162.083 148.969,161.937 L148.969,154.861 L147.528,154.861 L147.133,156.584 L146.097,156.584 L146.097,153.883 L153.641,153.883 L153.641,156.584 ZM162.893,154.579 C162.547,154.628 162.215,154.714 161.907,154.861 L161.907,159.688 C161.907,160.983 162.511,161.900 163.952,161.900 C164.458,161.900 164.890,161.765 165.259,161.533 C165.654,161.106 165.863,160.531 165.863,159.688 L165.863,154.861 C165.555,154.714 165.222,154.628 164.890,154.579 L164.890,153.883 L168.083,153.883 L168.083,154.579 C167.749,154.628 167.417,154.714 167.096,154.861 L167.096,159.688 C167.096,161.789 165.642,162.999 163.583,162.999 C161.513,162.999 160.181,161.581 160.181,159.688 L160.181,154.861 C159.861,154.714 159.528,154.628 159.195,154.579 L159.195,153.883 L162.893,153.883 L162.893,154.579 ZM188.263,154.861 C187.955,154.714 187.622,154.628 187.290,154.579 L187.290,153.883 L194.044,153.883 L194.106,156.571 L193.022,156.571 L192.504,154.836 L190.002,154.836 L190.002,157.721 L192.553,157.721 L192.553,158.747 L190.002,158.747 L190.002,161.937 L192.627,161.937 L193.268,160.262 L194.340,160.262 L194.180,162.865 L187.278,162.865 L187.278,162.217 C187.610,162.168 187.943,162.083 188.263,161.949 L188.263,154.861 Z" />
+                        </svg> -->
+                    </div>
+                    <p class="menu__text">Stay with us</p>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                    </div>
+                    <!-- <p class="menu__phone"><a class="" href="tel:+91">+91 999 999 9999</a></p> -->
+
+
+                </div>
+                <div class="menu__nav">
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link" data-scroll href="./index.html">Home</a>
+                        </li>
+                        <li class="list__item"><a class="menu__link menu__link--active" data-scroll href="./micheladam.html">Michel
+                                Adam</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./kashiffkhan.html">Kashiff
+                                Khan</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./fashiontv.html">FashionTv</a></li>
+                                <li class="list__item"><a class="menu__link" data-scroll href="./channel.html">Channel</a></li>
+                        
+                        
+                    </ul>
+                    <ul class="list">
+                        <li class="list__item"><a class="menu__link" data-scroll href="./homedecor.html">Home Decor</a></li>
+                        <li class="list__item"><a class="menu__link" data-scroll href="./product.html">Product
+                            </a></li>                           
+                        <li class="list__item"><a class="menu__link " href="./franchise.html">Franchise</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu__icon-exit">
+                    <img src="./img/icons/exit.svg"
+                        data-izimodal-close>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__arrow-top">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13px"
+                height="20px">
+                <path fill-rule="evenodd" fill="rgb(197, 164, 126)"
+                    d="M0.644,11.552 L8.317,19.341 C9.165,20.201 10.539,20.201 11.386,19.341 C12.234,18.481 12.234,17.086 11.386,16.225 L5.248,9.994 L11.386,3.763 C12.234,2.902 12.234,1.508 11.386,0.647 C10.539,-0.213 9.165,-0.213 8.317,0.647 L0.644,8.436 C-0.204,9.297 -0.204,10.692 0.644,11.552 Z" />
+            </svg>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 footer--order">
+                    <div class="footer__logo" data-aos="zoom-in-up">
+                        <img src="./img/icons/FTV_home_decoR_logo_28.png" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="wrapper modal-form__wrapper">
+                        <h1 class="modal-form__subtitle">Subscribe to the Newsletter</h1>
+                        <form action="./api.php" method="post">
+                        <label><i style="color: #c5a47e;
+                           " class="far fa-envelope">
+                                <input type="email" name="nemail" class="modal-form__input" placeholder="youremail@domain.com" /></i>
+                                <input type="hidden" name="url" value="" id="currentURL">
+                                 <script>
+                        document.getElementById("currentURL").value = window.location.href;
+                    </script>
+                            <button type="submit" name="newsletter_submit" class="modal-form-my-btn">Subscribe</button></label>
+                            </form>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-6 footer--order">
+                    <div class="footer__line footer__text--under"></div>
+                    <h3 class="footer__title social-m">Stay with us</h3>
+                    <div class="footer__social">
+                        <a href="https://www.instagram.com/ftv.home.decor.in/" target="_blank">
+                            <img src="./img/icons/instagram.svg" alt="">
+                        </a>
+                        <a href="https://www.facebook.com/FTV-Home-Decor-118955469900894" target="_blank">
+                            <img src="./img/icons/facebook.svg" alt="">
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/ftv-home-decor/about/" target="_blank">
+                            <img width="36px" src="./img/icons/linkedin.svg" alt="">
+                        </a>
+                        
+                    </div>
+                </div>
+                <div class="career-links">
+                    <a href="./career.html">Career   | </a> 
+                    <a href="./privacy-policy.html"> Privacy Policy  | </a> 
+                    <a href="./terms&conditions.html"> Terms and Conditions   </a> 
+                    
+                </div>
+                <div class="copyright">
+                    <p>© copyright 2021 FashionTV all rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/typed.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+    <script type='text/javascript' src='./js/vendor.js' id='mr-libs-js'></script>
+    <script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js?ver=1.0.0.1630314002'
+        id='mr-map-js'></script>
+    
+    <script type='text/javascript' src='./js/script.js' id='mr-custom-js'></script>
+    <script>
+        jQuery(function () {
+            AOS.init({
+                startEvent: 'load',
+                duration: 1200,
+                easing: 'ease-in-out-back'
+            });
+        });
+        jQuery(window).on('load', function () {
+            AOS.refresh();
+        });
+    </script>
+</body>
+
+</html>
